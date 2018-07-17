@@ -68,17 +68,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     ekf_.x_ = VectorXd(4);
     ekf_.x_ << 1, 1, 1, 1;
 
-    ekf_.F_  = MatrixXd(4, 4);
-    ekf_.F_ <<  1, 0, 1, 0,
-			  0, 1, 0, 1,
-			  0, 0, 1, 0,
-			  0, 0, 0, 1;
-
-    ekf_.P_  = MatrixXd(4, 4);
-    ekf_.P_ << 1, 0, 0, 0,
-			  0, 1, 0, 0,
-			  0, 0, 1000, 0,
-			  0, 0, 0, 1000;
+    
 
 
     if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
@@ -98,11 +88,22 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       */
       ekf_.x_(0) = measurement_pack.raw_measurements_(0);
       ekf_.x_(1) = measurement_pack.raw_measurements_(1);
-      ekf_.x_(2) = 0;
-      ekf_.x_(3) = 0;
-
+      //ekf_.x_(2) = 0;
+      //ekf_.x_(3) = 0;
     }
+    
+	ekf_.F_  = MatrixXd(4, 4);
+    ekf_.F_ <<  1, 0, 1, 0,
+			  0, 1, 0, 1,
+			  0, 0, 1, 0,
+			  0, 0, 0, 1;
 
+    ekf_.P_  = MatrixXd(4, 4);
+    ekf_.P_ << 1, 0, 0, 0,
+			  0, 1, 0, 0,
+			  0, 0, 1000, 0,
+			  0, 0, 0, 1000;
+	
     previous_timestamp_ = measurement_pack.timestamp_;
     // done initializing, no need to predict or update
     is_initialized_ = true;
