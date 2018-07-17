@@ -33,7 +33,7 @@ FusionEKF::FusionEKF() {
               0, 0.0009, 0,
               0, 0, 0.09;
 
-  H_Laser_  << 1,0,0,0
+  H_laser_  << 1,0,0,0
                0,1,0,0;
   /**
   TODO:
