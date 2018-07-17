@@ -69,8 +69,8 @@ int main()
     	  if (sensor_type.compare("L") == 0) {
       	  		meas_package.sensor_type_ = MeasurementPackage::LASER;
           		meas_package.raw_measurements_ = VectorXd(2);
-          		public float px;
-      	  		public float py;
+          		float px;
+      	  		float py;
           		iss >> px;
           		iss >> py;
           		meas_package.raw_measurements_ << px, py;
@@ -80,9 +80,9 @@ int main()
 
       	  		meas_package.sensor_type_ = MeasurementPackage::RADAR;
           		meas_package.raw_measurements_ = VectorXd(3);
-          		public float ro;
-                public float theta;
-      	  		public float ro_dot;
+          		float ro;
+                float theta;
+      	  		float ro_dot;
           		iss >> ro;
           		iss >> theta;
           		iss >> ro_dot;
