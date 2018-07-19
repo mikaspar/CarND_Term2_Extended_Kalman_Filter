@@ -40,11 +40,13 @@ if (estimations.size == ground_truth.size) {
 	
 	
   } else if(estimations.empty()) {
-	cout << "No estimations delivered" << endl;	
+	  cout << "No estimations delivered" << endl;
+      return rmse;	
 	
   } else {
-	cout << "Number of estimations does not fit the number of ground truth values" << endl;	
-		}	
+	  cout << "Number of estimations does not fit the number of ground truth values" << endl;	
+	  return rmse;
+	}	
 	
 
  }
