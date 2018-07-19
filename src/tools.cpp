@@ -20,7 +20,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
 	rmse << 0, 0, 0, 0;
 
 
-if estimations.size == ground_truth.size  {
+if (estimations.size == ground_truth.size) {
 	//sum of the differences
 	for(unsigned int i=0; i < estimations.size(); ++i){
 
