@@ -24,7 +24,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
 	  cout << "No estimations delivered" << endl;
       return rmse;
     } 
-    if (estimations.size != ground_truth.size)	{
+    if (estimations.size() != ground_truth.size())	{
 	  cout << "Number of estimations does not fit the number of ground truth values" << endl;	
 	  return rmse;
 	}	
