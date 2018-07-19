@@ -27,7 +27,7 @@ if (estimations.size == ground_truth.size) {
 		VectorXd difference = estimations[i] - ground_truth[i];
 		difference = difference.array()^2;
 		rmse += difference;
-		
+	}	
 		
 	//calculate the mean
 	rmse = rmse/estimations.size();
@@ -37,7 +37,7 @@ if (estimations.size == ground_truth.size) {
 
 	//return the result
 	return rmse;
-	}
+	
 	
   } else if(estimations.empty()) {
 	cout << "No estimations delivered" << endl;	
