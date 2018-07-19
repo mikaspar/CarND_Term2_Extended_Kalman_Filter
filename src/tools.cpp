@@ -40,11 +40,13 @@ if (estimations.size == ground_truth.size) {
 	
   } else if(estimations.empty()) {
 	cout << "No estimations delivered" << endl;	
+	
   } else {
 	cout << "Number of estimations does not fit the number of ground truth values" << endl;	
-	}	
-}
+		}	
+	}
 
+ }
 
 MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
   /**
