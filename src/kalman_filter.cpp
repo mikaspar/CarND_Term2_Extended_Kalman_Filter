@@ -69,12 +69,12 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 
 	VectorXd y_ = z - z_pred;
 
-	// Normalizing the angles
-	while(y_(1) > M_PI){
+	// Angels in < -PI, PI> 
+	if(y_(1) > M_PI){
 		y_(1) -= 2 * M_PI;
 	}
 
-	while(y_(1) < -M_PI){
+	if(y_(1) < -M_PI){
 		y_(1) += 2 * M_PI;
 	}
 
