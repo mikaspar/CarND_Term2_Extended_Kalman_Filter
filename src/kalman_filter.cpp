@@ -75,7 +75,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z_meas) {
 	}
 
 	if(y_(1) < -M_PI){
-	   y_(1) = y(1) + 2 * M_PI;
+	   y_(1) = y_(1) + 2 * M_PI;
 	}
 
 	MatrixXd H_trans = H_.transpose();
@@ -83,7 +83,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z_meas) {
 	MatrixXd S_inv = S.inverse();
 	MatrixXd K = P_ * H_trans * S_inv;
 
-	//new state
+	// Prediction for next step
 	long x_size = x_.size();
 	MatrixXd I = MatrixXd::Identity(x_size, x_size);
 	x_ = x_ + (K * y_);
