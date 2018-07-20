@@ -48,7 +48,9 @@ FusionEKF::FusionEKF() {
 /**
 * Destructor.
 */
-FusionEKF::~FusionEKF() {}
+FusionEKF::~FusionEKF() {
+	
+}
 
 void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
@@ -77,8 +79,8 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       */
       ekf_.x_(0) = measurement_pack.raw_measurements_(0) * cos(measurement_pack.raw_measurements_(1));
       ekf_.x_(1) = measurement_pack.raw_measurements_(0) * sin(measurement_pack.raw_measurements_(1));
-      ekf_.x_(2) = 0;
-      ekf_.x_(3) = 0;
+      ekf_.x_(2) = measurement_pack.raw_measurements_(2) * cos(measurement_pack.raw_measurements_(1));
+      ekf_.x_(3) = measurement_pack.raw_measurements_(2) * sin(measurement_pack.raw_measurements_(1));
 
 
     }
