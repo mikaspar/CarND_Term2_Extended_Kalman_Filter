@@ -69,7 +69,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z_meas) {
 
 	VectorXd y_ = z_meas - z_pred;
 
-	// Angels in < -PI, PI> 
+	// Theta in < -PI, PI> 
 	if(y_(1) > M_PI){
 	   y_(1) = y_(1) - 2 * M_PI;
 	}
