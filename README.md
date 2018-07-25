@@ -23,6 +23,8 @@ Using a measurement of one sensor only leads to lower accuracy of the estimate.
 
 Radar only:
 
+ CarND_Term2_Extended_Kalman_Filter/Docs/RMSE_BOTH.JPG 
+
 Lidar only:
 
 
