@@ -15,6 +15,15 @@ kalman_filter.h - declares KalmanFilter class and its methods
 tools.cpp - calculates RMSE and Jacobian matrix for radar measurement
 tools.h - declares tools class and its methods
 
-Result
+## Result
+I obtained following resultw when using both Radar and Lidar data for the position and velocity estimation:
+
+
+Using a measurement of one sensor only leads to lower accuracy of the estimate.
+
+Radar only:
+
+Lidar only:
+
 
 
