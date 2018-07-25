@@ -43,7 +43,7 @@ void KalmanFilter::Update(const VectorXd &z_meas) {
 	MatrixXd S_inv = S.inverse();
 	MatrixXd K = P_ * H_trans * S_inv;
 
-	// Updated State and Sigma
+	// Updated State and State Covariance
 	long x_size = x_.size();
 	MatrixXd I = MatrixXd::Identity(x_size, x_size);
 	x_ = x_ + (K * y);
@@ -69,7 +69,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z_meas) {
 
 	VectorXd y_ = z_meas - z_pred;
 
-	// Theta in < -PI, PI> 
+	// Theta in < -PI, PI>
 	if(y_(1) > M_PI){
 	   y_(1) = y_(1) - 2 * M_PI;
 	}
@@ -83,7 +83,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z_meas) {
 	MatrixXd S_inv = S.inverse();
 	MatrixXd K = P_ * H_trans * S_inv;
 
-	// Updated State and Sigma
+	// Updated State and State Covariance
 	long x_size = x_.size();
 	MatrixXd I = MatrixXd::Identity(x_size, x_size);
 	x_ = x_ + (K * y_);
