@@ -41,7 +41,7 @@ FusionEKF::FusionEKF() {
     * Set the process and measurement noises
   */
 
-  */ Process noises set up in the process covariance calculation in the prediction step
+  // Process noises set up in the process covariance calculation in the prediction step
 
 }
 
